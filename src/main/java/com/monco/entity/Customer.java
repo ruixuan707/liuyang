@@ -1,10 +1,7 @@
 package com.monco.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * 客户实体
@@ -33,6 +30,17 @@ public class Customer {
 	
 	@Column(length=1000)
 	private String remarks; // 备注
+
+	@Transient
+	private float total;
+
+	public float getTotal() {
+		return total;
+	}
+
+	public void setTotal(float total) {
+		this.total = total;
+	}
 
 	public Integer getId() {
 		return id;
@@ -88,7 +96,4 @@ public class Customer {
 				+ address + ", remarks=" + remarks + "]";
 	}
 
-	
-	
-	
 }

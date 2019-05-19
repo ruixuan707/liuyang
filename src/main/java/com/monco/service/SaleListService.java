@@ -30,15 +30,12 @@ public interface SaleListService {
 	/**
 	 * 添加销售单 以及所有销售单商品 以及 修改商品的成本均价
 	 * @param saleList 销售单
-	 * @param SaleListGoodsList 销售单商品
 	 */
 	public void save(SaleList saleList,List<SaleListGoods> saleListGoodsList);
 	
 	/**
 	 * 根据条件查询销售单信息
 	 * @param saleList
-	 * @param page
-	 * @param pageSize
 	 * @param direction
 	 * @param properties
 	 * @return
@@ -73,4 +70,10 @@ public interface SaleListService {
 	 */
 	public List<Object> countSaleByMonth(String begin,String end);
 
+	/**
+	 * 按照客户id 获取累计金额
+	 * @param customerId
+	 * @return
+	 */
+	public float totalByCustomerId(Integer customerId);
 }
